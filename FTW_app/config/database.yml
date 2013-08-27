@@ -1,0 +1,21 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+common: &common
+  adapter: postgresql
+  username: barrettclark
+  password:
+  host: localhost
+  port: 5432
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *common
+  database: FTW_app_development
+
+test:
+  <<: *common
+  database: FTW_app_test
+
+production:
+  <<: *common
+  database: FTW_app_production
